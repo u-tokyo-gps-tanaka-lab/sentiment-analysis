@@ -1,6 +1,7 @@
 {
   "name": "text_binary_classification",
   "n_gpu": 1,
+  "device_id" : 0,
   "model_arch": {
     "type": "TextCNN1d",
     "args": {
@@ -18,9 +19,9 @@
   "dataset": {
     "type": "HotspringDataSet",
     "args": {
-      "data_dir": "data/corpus",
-      "data_name": "all_corpus_58k.csv",
-      "word_embedding_path": "data/pre-training/word_embedding/sgns.merge.char"
+      "data_dir": "data/gps",
+      "data_name": "posneg.csv",
+      "word_embedding_path": "data/gps/wiki.vec.txt"
     }
   },
   "data_loader": {
@@ -35,7 +36,7 @@
     "args": {
       "data_dir": "data/testing",
       "data_name": "test_corpus_6k.csv",
-      "word_embedding_path": "data/pre-training/word_embedding/sgns.merge.char",
+      "word_embedding_path": "data/gps/wiki.vec.txt",
       "model_word_embedding_path": "data/corpus/all_corpus_58k_word_embedding.pkl"
     }
   },
@@ -51,7 +52,7 @@
     "args": {
       "data_dir": "data/prediction",
       "data_name": "text_list.csv",
-      "word_embedding_path": "data/pre-training/word_embedding/sgns.merge.char",
+      "word_embedding_path": "data/gps/wikimodel.kv",
       "model_word_embedding_path": "data/corpus/all_corpus_58k_word_embedding.pkl"
     }
   },
