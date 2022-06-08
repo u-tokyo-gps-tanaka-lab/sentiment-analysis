@@ -32,7 +32,7 @@ def load_pretrained_wordembedding(word_embedding_path):
             word2vec_from_text = pickle.load(f)
 
     # 添加PAD、UNK为合适维度的随机权重
-    word2vec_from_text.add_vector('PAD', np.random.randn(word2vec_from_text.vector_size))
-    word2vec_from_text.add_vector('UNK', np.random.randn(word2vec_from_text.vector_size))
+    word2vec_from_text['PAD'] = np.random.randn(word2vec_from_text.vector_size)
+    word2vec_from_text['UNK'] = np.random.randn(word2vec_from_text.vector_size)
 
     return word2vec_from_text
